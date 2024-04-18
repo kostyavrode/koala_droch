@@ -8,7 +8,7 @@ public class Ball : MonoBehaviour
     {
         if (collision.gameObject.tag=="koala")
         {
-            Debug.Log("KOALA");
+            GameManager.instance.ShotKoala();
         }
     }
 }

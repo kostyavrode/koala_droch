@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public GameObject endMoneyBagGameScreen;
     public GameObject endRunGameScreenWin;
     public GameObject endRunGameScreenLose;
+    public GameObject startMenu;
     private void Awake()
     {
         instance = this;
@@ -36,6 +37,10 @@ public class UIManager : MonoBehaviour
     public void ShowMoneyBagGames(string data)
     {
         moneyBagGamesText.text = data;
+    }
+    public void StartRunGame()
+    {
+        GameManager.instance.StartRunGame();
     }
     public void StartMoneyBagGame()
     {

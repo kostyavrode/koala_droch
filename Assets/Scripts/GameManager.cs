@@ -144,7 +144,7 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator WaitToStartMove()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         rotator.enabled = true;
         ballThrower.SetActive(true);
     }

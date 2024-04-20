@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject endRunGameScreenWin;
     public GameObject endRunGameScreenLose;
     public GameObject startMenu;
+    public AudioSource audioSource;
     private void Awake()
     {
         instance = this;
@@ -47,6 +48,7 @@ public class UIManager : MonoBehaviour
         if (GameManager.instance.moneyBagRuns>=1)
         {
             GameManager.instance.StartMoneyBagGame();
+            startMenu.SetActive(false);
         }
     }
     public void EndGameButton()
@@ -59,5 +61,30 @@ public class UIManager : MonoBehaviour
         CameraRotator.instance.MoveCameraToStart();
         endRunGameScreenLose.SetActive(false);
         endRunGameScreenWin.SetActive(false);
+    }
+    public void OpenSettings()
+    {
+        Time.timeScale = 0;
+    }
+    public void CloseSettings()
+    {
+        Time.timeScale = 1;
+    }
+    public void BackToMenuButton()
+    {
+        Time.timeScale = 1;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+    }
+    public void SoundOn()
+    {
+        PlayerPrefs.SetString("Sound", "true");
+        PlayerPrefs.Save();
+        audioSource.Play();
+    }
+    public void SoundOff()
+    {
+        PlayerPrefs.SetString("Sound", "false");
+        PlayerPrefs.Save();
+        audioSource.Pause();
     }
 }

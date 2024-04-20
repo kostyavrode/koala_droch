@@ -9,6 +9,7 @@ public class Rotator : MonoBehaviour
     public float rotateZ;
     private void Update()
     {
+        if (Time.timeScale!=0)
         transform.Rotate(rotateX, rotateY, rotateZ);
     }
 }

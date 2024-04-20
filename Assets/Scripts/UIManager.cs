@@ -18,6 +18,14 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        if (PlayerPrefs.GetString("Sound") == "true")
+        {
+            audioSource.Play();
+        }
+        else
+        {
+            audioSource.Pause();
+        }
     }
     public void ShowMoney(string data)
     {

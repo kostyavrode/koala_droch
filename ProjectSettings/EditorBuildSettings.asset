@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Stylized Jungle Pack/Demo Scene/Demo Scene.unity
+    guid: bb7adca7ef35fe24cbdd273afef0e3c7
   m_configObjects: {}

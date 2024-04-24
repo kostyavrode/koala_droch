@@ -15,6 +15,26 @@ public class UIManager : MonoBehaviour
     public GameObject endRunGameScreenLose;
     public GameObject startMenu;
     public AudioSource audioSource;
+    [SerializeField] public GameObject[] elements;
+    [SerializeField] private GameObject blackWindow;
+    [SerializeField] private AudioSource source;
+    public void CloseUI()
+    {
+        source.Pause();
+        foreach (GameObject obj in elements)
+        {
+            obj.SetActive(false);
+        }
+        blackWindow.SetActive(true);
+
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            CloseUI();
+        }
+    }
     private void Awake()
     {
         instance = this;
